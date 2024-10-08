@@ -155,40 +155,6 @@ func matchFromPosition(line []byte, pattern string) bool {
 			// If character class matched correctly, proceed
 			i += lineSize
 			continue
-			// } else if j+patternSize < len(pattern) && pattern[j+patternSize] == '+' {
-			// 	// Handle the '+' quantifier (one or more occurrences)
-			// 	prevRune := patternRune
-			// 	j += patternSize + 1 // Move past the '+' in the pattern
-			// 	// Ensure the first occurrence matches
-			// 	if prevRune != lineRune {
-			// 		return false
-			// 	}
-			// 	i += lineSize
-			// 	for i < len(line) {
-			// 		nextRune, nextSize := utf8.DecodeRune(line[i:])
-			// 		if nextRune != prevRune {
-			// 			break
-			// 		}
-			// 		i += nextSize
-			// 	}
-			// 	continue
-			// } else if j+patternSize < len(pattern) && pattern[j+patternSize] == '?' {
-			// Handle the '?' quantifier (zero or one occurrence)
-			// prevRune, prevSize := utf8.DecodeRuneInString(pattern[j:])
-
-			// // Case 1: Try skipping the preceding character
-			// if matchFromPosition(line[i:], pattern[j+prevSize+patternSize:]) {
-			// 	return true
-			// }
-
-			// // Case 2: Match the preceding character if it exists
-			// if lineRune == prevRune {
-			// 	i += lineSize
-			// }
-
-			// // Move past the '?' in the pattern
-			// j += prevSize + patternSize
-			// continue
 		} // Handle quantifiers like '+' (one or more) and '?' (zero or one)
 		if j+patternSize < len(pattern) && (pattern[j+patternSize] == '+' || pattern[j+patternSize] == '?') {
 			prevRune := patternRune
