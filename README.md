@@ -28,7 +28,7 @@ For example:
    echo -n "foo" | ./script.sh -E "(foo|bar)"
    ```
 ## Explanation
-For a detailed explanation of this tool, read the article: 
+For a detailed explanation of this tool, refer this article: https://medium.com/@AnnanyaPandey/building-a-custom-grep-like-pattern-matcher-in-go-40825fb9c98d
 
 ## Contributing
 Feel free to open issues or submit pull requests if you would like to contribute to this project.
